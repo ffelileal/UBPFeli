@@ -1,0 +1,11 @@
+{
+    "C_Cpp.default.compilerPath": "C:/MinGW/bin/g++.exe",
+    "files.associations": {
+        "iostream": "cpp",
+        "cstdlib": "cpp"
+    },
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ $fileName -o temp && .\\temp && del temp.exe"
+    },
+    "code-runner.runInTerminal": true
+}
