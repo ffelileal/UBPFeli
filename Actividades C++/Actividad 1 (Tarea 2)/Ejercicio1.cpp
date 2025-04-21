@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <iomanip> 
 #include <conio.h>
 
 using namespace std;
@@ -11,11 +12,12 @@ int main (){
     cin >> Nota1;
     cin >> Nota2;
     cin >> Nota3;
-    promedio = (Nota1 + Nota2 + Nota3) / 3;
+   promedio = (Nota1 + Nota2 + Nota3) / 3.0;
+   cout << fixed << setprecision(2); 
     if (promedio >= 6){
         cout << "El alumno esta aprobado con " << promedio << endl;
     }else{
-        cout << "El alumno no esta aprobado" << endl;
+        cout << "El alumno no esta aprobado " <<promedio << endl;
     }
     return 0;
 }
