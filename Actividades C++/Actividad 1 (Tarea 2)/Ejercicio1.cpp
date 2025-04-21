@@ -15,9 +15,9 @@ int main (){
    promedio = (Nota1 + Nota2 + Nota3) / 3.0;
    cout << fixed << setprecision(2); 
     if (promedio >= 6){
-        cout << "El alumno esta aprobado con " << promedio << endl;
+        cout << "El alumno esta aprobado con: " << promedio << endl;
     }else{
-        cout << "El alumno no esta aprobado " <<promedio << endl;
+        cout << "El alumno esta desaprobbado con: " <<promedio << endl;
     }
     return 0;
 }
