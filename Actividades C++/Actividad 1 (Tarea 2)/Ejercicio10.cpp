@@ -36,4 +36,5 @@ int main() {
     cout << "Clientes con obra social: " << clientesO << endl;
 
     return 0;
+    
 }
