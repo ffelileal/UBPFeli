@@ -26,7 +26,7 @@ int main() {
 
         total += monto;
 
-        system("cls"); // Limpia la pantalla
+        system("cls"); 
         cout << "Ingrese el monto de la venta: ";
         cin >> monto;
     }
