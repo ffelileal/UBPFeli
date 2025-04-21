@@ -19,6 +19,8 @@ int main (){
     }else{
         cout << "El alumno esta desaprobbado con: " <<promedio << endl;
     }
+
     return 0;
+
 }
 
