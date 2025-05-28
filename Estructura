@@ -2,8 +2,15 @@
 #include <stdlib.h>
 #include <conio.h>
 using namespace std;
+struct  {
+   /*
+   Datos a poner
+   */
+};
 int main (){
+    
 }
 
-/*strcmp
-strcpy*/
+
+
+
