@@ -105,22 +105,37 @@ void cargarNotasYAsistencia(Estudiante &e) {
 // ===================== ARCHIVOS =====================
 
 /**
- * Guarda todos los estudiantes en un archivo de texto.
- * @param archivo Nombre del archivo donde guardar.
+Esta función guarda todos los estudiantes registrados en un archivo de texto,
+ mostrando los datos en columnas alineadas para que sea fácil de leer.
  */
 void guardarEnArchivo(const string& archivo) {
-    ofstream fout(archivo);
-    fout << cantidadEstudiantes << '\n';
-    for (int i = 0; i < cantidadEstudiantes; i++) {
-        fout << estudiantes[i].nombre << ';'
-             << estudiantes[i].legajo << ';'
-             << estudiantes[i].nota1 << ';'
-             << estudiantes[i].nota2 << ';'
-             << estudiantes[i].nota3 << ';'
-             << estudiantes[i].asistencia << ';'
-             << estudiantes[i].promedio << '\n';
+    ofstream fout(archivo); 
+    if (!fout) {
+        cerr << "Error al abrir el archivo para guardar.\n";
+        return;
     }
+    fout << left << setw(20) << "Nombre"
+         << setw(10) << "Legajo"
+         << setw(8) << "Nota1"
+         << setw(8) << "Nota2"
+         << setw(8) << "Nota3"
+         << setw(12) << "Asistencia"
+         << setw(10) << "Promedio" << '\n';
+    fout << string(76, '-') << '\n';  
+    for (int i = 0; i < cantidadEstudiantes; i++) {
+        fout << left << setw(20) << estudiantes[i].nombre
+             << setw(10) << estudiantes[i].legajo
+             << setw(8) << estudiantes[i].nota1
+             << setw(8) << estudiantes[i].nota2
+             << setw(8) << estudiantes[i].nota3
+             << setw(12) << estudiantes[i].asistencia
+             << setw(10) << estudiantes[i].promedio << '\n';
+    }
+    fout.close(); 
+    cout << "\nArchivo guardado correctamente en '" << archivo << "'.\n";
 }
+
+
 
 /**
  * Carga los estudiantes desde un archivo de texto.
@@ -298,8 +313,8 @@ void menuPrincipal() {
         cout << "4 - Mostrar desprobados\n";
         cout << "5 - Modificar Notas/Asistencia\n";
         cout << "6 - Eliminar Estudiante\n";
-        cout << "0 - Guardar\n";
-        cout << "9 - Salir\n";
+        cout << "0 - Guardar en archivo\n";
+        cout << "9 - Salir del programa\n";
         opcion = pedirOpcion("Opcion: ");
 
         switch (opcion) {
@@ -309,7 +324,10 @@ void menuPrincipal() {
             case 4: mostrarDesaprobados(); break;
             case 5: modificarEstudiante(); break;
             case 6: eliminarEstudiante(); break;
-            case 0: guardarEnArchivo("estudiantes.txt"); cout << "Datos guardados.\n"; break;
+            case 0:guardarEnArchivo("estudiantes.txt");
+                cout << "Datos guardados correctamente.\n";
+                pausar(); // Espera al usuario
+                break;
             case 9: cout << "Saliendo del programa...\n"; break;
             default: cout << "Opcion invalida.\n"; break;
         }

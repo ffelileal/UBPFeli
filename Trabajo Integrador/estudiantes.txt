@@ -1,0 +1,2 @@
+Nombre              Legajo    Nota1   Nota2   Nota3   Asistencia  Promedio  
+----------------------------------------------------------------------------
