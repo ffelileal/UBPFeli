@@ -1,0 +1,33 @@
+Explicación general del propósito  
+El programa permite gestionar estudiantes de manera sencilla: registrar, modificar, eliminar, mostrar y guardar sus datos (nombre, legajo, notas, asistencia y promedio) en un archivo de texto. Es útil para docentes o administrativos que necesitan llevar un registro digital básico de alumnos y facilita la consulta y actualización de información académica.
+
+Alta de producto (Registro de estudiantes)  
+La función de alta permite agregar uno o varios estudiantes, solicitando nombre, legajo, notas y asistencia, validando los datos y guardándolos en memoria. Se controla que no se exceda el máximo permitido y que los datos ingresados sean válidos (por ejemplo, asistencia entre 0 y 100).  
+La función `registrarEstudiantes()` permite dar de alta (agregar) uno o varios estudiantes. Solicita nombre, legajo, notas y asistencia, valida los datos y los guarda en memoria.
+
+Baja lógica y razones de elección  
+Actualmente, el sistema realiza una baja física: elimina completamente al estudiante del arreglo y del archivo. Se podría implementar baja lógica (marcar como inactivo con un campo extra, como `bool activo`), pero se eligió la baja física por simplicidad, claridad y porque el volumen de datos es bajo. Esto facilita el manejo y evita registros innecesarios en memoria.  
+Razón de elección:  
+- Simplicidad y claridad para principiantes.  
+- No se requiere historial de bajas ni recuperación.
+
+Modificación de registros  
+La función de modificación permite actualizar las notas y la asistencia de un estudiante existente, buscando por legajo y validando la existencia antes de modificar. Se recalcula automáticamente el promedio tras cada cambio.  
+La función `modificarEstudiante()` permite modificar las notas y la asistencia de un estudiante existente, buscando por legajo. Valida la existencia y actualiza los datos en memoria.
+
+Visualización de datos y validaciones  
+El sistema permite mostrar todos los estudiantes, aprobados y desaprobados, con datos ordenados y claros.  
+- Visualización: Funciones como `mostrarEstudiantes()`, `mostrarAprobados()` y `mostrarDesaprobados()` muestran los datos en consola de forma clara y ordenada.  
+- Validaciones: Se valida la existencia de estudiantes antes de mostrar, modificar o eliminar, y se controlan los valores ingresados para evitar errores (por ejemplo, notas y asistencia dentro de rangos válidos). Al cargar notas y asistencia, se verifica que los valores sean válidos (por ejemplo, asistencia entre 0 y 100).
+
+Organización del archivo  
+Los datos se guardan en un archivo de texto (`estudiantes.txt`) con columnas alineadas y encabezados, facilitando la lectura y revisión manual. Cada vez que se guarda, se sobrescribe el archivo con todos los registros actuales, asegurando que la información esté siempre actualizada y sin duplicados.
+
+Buenas prácticas aplicadas  
+- Uso de constantes y estructuras para claridad y mantenimiento.
+- Funciones separadas para cada operación (alta, baja, modificación, visualización).
+- Validación de entradas y control de errores.
+- Comentarios explicativos en cada función y bloque relevante.
+- Encabezados y formato en el archivo para facilitar la lectura.
+- Pausa y limpieza de pantalla para mejor experiencia de usuario.
+- Separación de lógica de negocio y presentación para facilitar futuras mejoras.
