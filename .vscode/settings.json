@@ -1,5 +1,5 @@
 {
-    "C_Cpp.default.compilerPath": "C:/MinGW/bin/g++.exe",
+    "C_Cpp.default.compilerPath": "C:/mingw64/bin/c++.exe",
     "files.associations": {
         "iostream": "cpp",
         "cstdlib": "cpp",
@@ -47,8 +47,9 @@
         "streambuf": "cpp",
         "typeinfo": "cpp"
     },
-    "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ $fileName -o temp && .\\temp && del temp.exe"
-    },
+   "code-runner.executorMapByFileExtension": {
+    ".cpp": "cmd /c \"cd ${fileDirname} && g++ ${fileName} -o ${fileBasenameNoExtension} && ${fileBasenameNoExtension}\""
+},
+
     "code-runner.runInTerminal": true
 }

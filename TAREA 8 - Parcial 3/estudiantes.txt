@@ -1,2 +1,4 @@
 Nombre              Legajo    Nota1   Nota2   Nota3   Asistencia  Promedio  
 ----------------------------------------------------------------------------
+Felipe              1         6       7       8       100         7         
+Lorenzo             2         4       4       3       74          3.66667   
