@@ -16,6 +16,7 @@ void patronAsteriscos() {
         }
         cout << endl;
     }
+    
 }
 
 // 2. Busqueda lineal en un arreglo
