@@ -182,12 +182,24 @@ void codigoConErrores() {
     cout << "    int x = 5, y = 10, res;\n";
     cout << "    suma(x, y, res)\n";
     cout << "    cout << \"La suma es: \" << res << endl\n";
-    cout << "    return 0\n";
+    cout << "    return\n";
     cout << "}\n";
-    cout << "Justificacion: Faltan llaves, punto y coma, prototipo, etc.\n";
-    cout << "Codigo corregido:\n";
-    cout << "void suma(int a, int b, int& resultado) { resultado = a + b; }\n";
-    cout << "int main() { int x = 5, y = 10, res; suma(x, y, res); cout << \"La suma es: \" << res << endl; return 0; }\n";
+    cout << "Ingrese por terminal los errores que encuentra en el codigo anterior:\n";
+    string erroresUsuario;
+    getline(cin, erroresUsuario);
+    cout << "\nTus respuestas fueron:\n" << erroresUsuario << endl;
+    cout << "Ahora corrige el codigo (escriba la correccion en una sola linea):\n";
+    string correccionUsuario;
+    getline(cin, correccionUsuario);
+
+    // Correccion esperada (puedes ajustar el texto si lo deseas)
+    string correccionEsperada = "void suma(int a, int b, int& resultado) { resultado = a + b; } int main() { int x = 5, y = 10, res; suma(x, y, res); cout << \"La suma es: \" << res << endl; return 0; }";
+
+    if (correccionUsuario == correccionEsperada) {
+        cout << "¡Felicitaciones! La correccion es correcta.\n";
+    } else {
+        cout << "La correccion no es exactamente igual a la esperada. Revisa nuevamente.\n";
+    }
 }
 
 int main() {
