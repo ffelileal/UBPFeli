@@ -153,6 +153,8 @@ void multipleChoice() {
     if (respuesta == 'b' || respuesta == 'B') {
         cout << "Correcto!\n\n";
         score++;
+
+        
     } else {
         cout << "Incorrecto. La respuesta correcta es b)\n\n";
     }
